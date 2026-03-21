@@ -180,7 +180,7 @@
 					class="text-center text-3xl text-pink-400 mb-12 flex items-center justify-center gap-3"
 				>
 					<a
-						href="https://github.com/arckanop"
+						href="https://github.com/arckanop/AppScript-ID-Lookup"
 						target="_blank"
 						class="underline underline-offset-4 hover:text-pink-600 transition-colors"
 						><svg
@@ -300,7 +300,16 @@
 			function formatTimestamp(val) {
 				if (!val) return "—";
 				const d = new Date(val);
-				return isNaN(d) ? String(val) : d.toLocaleString();
+				if (isNaN(d)) return String(val);
+				return d.toLocaleString("en-GB", {
+					day: "numeric",
+					month: "numeric",
+					year: "numeric",
+					hour: "2-digit",
+					minute: "2-digit",
+					second: "2-digit",
+					hour12: false,
+				});
 			}
 
 			function isCollected(status) {

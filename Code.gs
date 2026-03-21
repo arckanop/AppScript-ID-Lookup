@@ -22,7 +22,7 @@ function getData() {
 			timestamp: values[i][0] ? String(values[i][0]) : "",
 			name: String(values[i][1] ?? ""),
 			status: String(values[i][3] ?? ""),
-			notes: String(values[i][4] ?? "")
+			notes: String(values[i][4] ?? ""),
 		};
 	}
 
@@ -48,7 +48,7 @@ function findID(ID) {
 				timestamp: entry.timestamp,
 				name: entry.name,
 				status: entry.status,
-				notes: entry.notes
+				notes: entry.notes,
 			};
 		}
 
