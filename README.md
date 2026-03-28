@@ -19,7 +19,7 @@ This project uses **Google Apps Script** as the backend and serves a clean **HTM
 - Show record details such as:
   - Timestamp
   - Name
-  - Row number
+  - Row number (In Sheets)
   - Notes
   - Collection status
 - Toggle status between collected and not collected
