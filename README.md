@@ -1,4 +1,4 @@
-# Google Sheets Data Lookup Website Deployed on Appscript
+# Google Sheets Data Lookup Web App
 
 A simple Google Apps Script web app for looking up IDs from Google Sheets, displaying user details, updating collection status, and adding missing IDs directly from the website.
 
