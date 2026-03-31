@@ -17,13 +17,26 @@ This project uses **Google Apps Script** as the backend and serves a clean **HTM
 - Fetch data directly from **Google Sheets**
 - Fast lookup using **Apps Script CacheService**
 - Show record details such as:
-  - Timestamp
-  - Name
-  - Row number (In Sheets)
-  - Notes
-  - Collection status
+	- Timestamp
+	- Name
+	- Row number (In Sheets)
+	- Notes
+	- Collection status
 - Toggle status between collected and not collected
 - Add missing IDs directly from the web UI
 - Dual mode interface:
-  - **Lookup mode**
-  - **Insert mode**
+	- **Lookup mode**
+	- **Insert mode**
+
+Requirements
+- Google Sheets with a sheet named Main with the column
+
+	A: Timestamp
+
+	B: Name
+
+	C: ID
+
+	D: Status
+
+	E: Notes
