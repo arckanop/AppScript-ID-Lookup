@@ -29,14 +29,9 @@ This project uses **Google Apps Script** as the backend and serves a clean **HTM
 	- **Insert mode**
 
 Requirements
-- Google Sheets with a sheet named Main with the column
-
-	A: Timestamp
-
-	B: Name
-
-	C: ID
-
-	D: Status
-
-	E: Notes
+- A sheet named `Main` with the following columns:
+  - **A:** Timestamp
+  - **B:** Name
+  - **C:** ID
+  - **D:** Status
+  - **E:** Notes$$
