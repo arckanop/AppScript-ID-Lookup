@@ -1,10 +1,50 @@
 function myFunction() {
-	Logger.log(MailApp.getRemainingDailyQuota());
-	// const rows = [94, 95, 96, 120];
+  // if (MailApp.getRemainingDailyQuota() == 0.0) return;
+  // else Logger.log(MailApp.getRemainingDailyQuota());
+  
+  Logger.log(MailApp.getRemainingDailyQuota());
+  retryEmailByRow(546);
 
-	// for (let i = 0; i < rows.length; i++) {
-	// 	retryEmailByRow(rows[i]);
+  // retryEmailByRow(865);
+  // <-- Stop -->
+
+  // for (let i = 826; i <= 832; i++) {
+	//  	retryEmailByRow(i);
 	// }
+
+  // let rows = [834, 835, 836, 837, 838, 841, 845, 849, 850, 851, 858, 859, 860, 862, 877, 878, 880, 881, 888, 891, 892, 893, 895, 897 , 898];
+
+	// for (let row of rows) {
+	//  	retryEmailByRow(row);
+	// }
+}
+
+function doGet() {
+	getData();
+	return HtmlService.createHtmlOutputFromFile("index.html");
+}
+
+function findID(ID) {
+	try {
+		const idMap = getData();
+		const key = String(ID).trim();
+
+		if (Object.prototype.hasOwnProperty.call(idMap, key)) {
+			const entry = idMap[key];
+			return {
+				found: true,
+				row: entry.row,
+				timestamp: entry.timestamp,
+				name: entry.name,
+				status: entry.status,
+				notes: entry.notes,
+			};
+		}
+
+		return { found: false };
+	} catch (error) {
+		return { found: false, error: error.message };
+	}
 }
 
 function retryEmailByRow(row) {
@@ -72,8 +112,8 @@ function retryEmailByRow(row) {
 			'T' + row, 'U' + row, 'AE' + row
 		]).setHorizontalAlignment('center');
 
-		sheet.getRange(row, 33).setValue('Retry Successfully');
-		Logger.log('Retry succeeded for row %s', row);
+		sheet.getRange(row, 33).setValue('Fixed');
+		console.log('Retry succeeded for row %s', row);
 	} catch (err) {
 		sheet.getRange(row, 33).setValue('Retry Failed: ' + err.message);
 		throw err;
